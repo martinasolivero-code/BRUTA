@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUTA - El Gym Que Falta | Villa Urquiza</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+            --color-black: #0D0E0E;
+            --color-zinc-dark: #141616;
+            --color-military-dark: #232A1F;
+            --color-military-green: #3B4735;
+            --color-military-light: #617557;
+            --color-white: #FFFFFF;
+            --color-gray-text: #9A9E9A;
+        }
+
+        body {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        header {
+            background-color: var(--color-black);
+            border-bottom: 1px solid #1A1C1A;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+        }
+
+        .btn-nav {
+            background-color: var(--color-military-green);
+            color: var(--color-white);
+            border: 1px solid var(--color-military-light);
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+            }
+        }
+
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .location-tag {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--color-military-light);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .location-tag span {
+            color: var(--color-gray-text);
+            margin-right: 12px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 span {
+            color: var(--color-military-light);
+        }
+
+        .hero h2 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            color: var(--color-gray-text);
+            max-width: 480px;
+        }
+
+        /* Form Side */
+        .hero-right {
+            background-color: var(--color-zinc-dark);
+            border: 1px solid #1A1C1A;
+            border-radius: 8px;
+            padding: 40px;
+        }
+
+        .counter-box {
+            text-align: center;
+            margin-bottom: 32px;
+            border-bottom: 1px solid #1A1C1A;
+            padding-bottom: 24px;
+        }
+
+        .counter-num {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--color-military-light);
+            line-height: 1;
+        }
+
+        .counter-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .counter-sub {
+            font-size: 11px;
+            color: var(--color-gray-text);
+        }
+
+        .form-title {
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            background-color: var(--color-black);
+            border: 1px solid #222;
+            padding: 14px;
+            border-radius: 4px;
+            color: var(--color-white);
+            font-size: 14px;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--color-military-light);
+        }
+
+        .btn-hero-form {
+            width: 100%;
+            background-color: var(--color-military-green);
+            color: var(--color-white);
+            border: 1px solid var(--color-military-light);
+            padding: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .form-disclaimer {
+            font-size: 11px;
+            color: var(--color-gray-text);
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        /* Pillars Section */
+        .why-bruta {
+            padding: 80px 0;
+            border-top: 1px solid #1A1C1A;
+        }
+
+        .section-tag {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-military-light);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .why-bruta h2 {
+            font-size: 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 48px;
+            letter-spacing: -1px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .pillar h3 {
+            font-size: 48px;
+            font-weight: 900;
+            color: #1F2220;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .pillar h4 {
+            font-size: 18px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .pillar p {
+            font-size: 14px;
+            color: var(--color-gray-text);
+        }
+
+        /* What is Hyrox Section */
+        .hyrox-explainer {
+            padding: 80px 0;
+            background-color: var(--color-zinc-dark);
+            border-top: 1px solid #1A1C1A;
+        }
+
+        .hyrox-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .hyrox-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hyrox-left h2 {
+            font-size: 40px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hyrox-left p {
+            font-size: 15px;
+            color: var(--color-gray-text);
+            margin-bottom: 16px;
+        }
+
+        .hyrox-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .stat-card {
+            border-left: 2px solid var(--color-military-light);
+            padding-left: 16px;
+        }
+
+        .stat-num {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .stat-lbl {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-gray-text);
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .price-card {
+            background-color: var(--color-zinc-dark);
+            border: 1px solid #1A1C1A;
+            padding: 32px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--color-military-light);
+            background-color: #111512;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-military-green);
+            border: 1px solid var(--color-military-light);
+            color: #FFF;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 12px;
+            text-transform: uppercase;
+            border-radius: 20px;
+        }
+
+        .plan-name {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color-gray-text);
+            margin-bottom: 16px;
+        }
+
+        .plan-price {
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .plan-period {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--color-military-light);
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .plan-features li {
+            font-size: 13px;
+            color: #D0D4D0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-features li::before {
+            content: "✓";
+            color: var(--color-military-light);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn-price {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid #333;
+            color: #FFF;
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .featured .btn-price {
+            background-color: var(--color-military-green);
+            border-color: var(--color-military-light);
+        }
+
+        /* Location Section */
+        .location-section {
+            padding: 80px 0;
+            border-top: 1px solid #1A1C1A;
+            background-color: var(--color-black);
+        }
+
+        .loc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .loc-grid {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .loc-map-placeholder {
+            background-color: var(--color-zinc-dark);
+            border: 1px solid #1A1C1A;
+            height: 250px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-military-light);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Bottom CTA Form */
+        .bottom-cta {
+            padding: 100px 0;
+            text-align: center;
+            border-top: 1px solid #1A1C1A;
+            background: linear-gradient(180deg, var(--color-black), var(--color-zinc-dark));
+        }
+
+        .bottom-cta h2 {
+            font-size: 48px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .bottom-cta p {
+            color: var(--color-gray-text);
+            margin-bottom: 32px;
+        }
+
+        .inline-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 12px;
+        }
+
+        .inline-form input {
+            flex: 1;
+            background-color: var(--color-black);
+            border: 1px solid #222;
+            padding: 14px;
+            border-radius: 4px;
+            color: #FFF;
+        }
+
+        .inline-form button {
+            background-color: var(--color-military-green);
+            border: 1px solid var(--color-military-light);
+            color: #FFF;
+            padding: 0 24px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #1A1C1A;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .footer-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: var(--color-gray-text);
+            text-decoration: none;
+            margin-left: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">BRUTA</div>
+            <a href="#registro" class="btn-nav">Quiero mi lugar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <div class="location-tag"><span>VILLA URQUIZA</span> ABIERTO 2026 <span>•</span> HYROX TRAINING</div>
+                <h1>EL GYM<br>QUE <span>FALTA.</span></h1>
+                <h2>El primer espacio de entrenamiento hybrid y HYROX del corredor norte de Buenos Aires.</h2>
+                <p>Para los que entrenan en serio — sin importar el nivel.</p>
+            </div>
+            <div class="hero-right" id="registro">
+                <div class="counter-box">
+                    <div class="counter-num">77</div>
+                    <div class="counter-label">Cupos Fundadores</div>
+                    <div class="counter-sub">23 de 100 lugares ya reservados</div>
+                </div>
+                <div class="form-title">Reservá tu lugar</div>
+                <form onsubmit="alert('¡Registro exitoso en BRUTA!'); return false;">
+                    <div class="form-group"><input type="text" placeholder="Nombre y apellido" required></div>
+                    <div class="form-group"><input type="email" placeholder="Email" required></div>
+                    <div class="form-group"><input type="tel" placeholder="WhatsApp (con código de área)" required></div>
+                    <button type="submit" class="btn-hero-form">Quiero mi lugar →</button>
+                    <div class="form-disclaimer">Sin costo. Sin compromiso. Te avisamos antes que nadie cuando abramos — con precio fundador exclusivo.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-bruta">
+        <div class="container">
+            <div class="section-tag">Por qué BRUTA</div>
+            <h2>Entrenamiento sin excusas</h2>
+            <div class="pillars-grid">
+                <div class="pillar">
+                    <h3>01</h3>
+                    <h4>Hybrid Training</h4>
+                    <p>Fuerza y cardio en la misma sesión. El método que usan los atletas más completos del mundo — adaptado a todos los niveles.</p>
+                </div>
+                <div class="pillar">
+                    <h3>02</h3>
+                    <h4>Hyrox Oficial</h4>
+                    <p>Único espacio del corredor norte preparado para entrenar y competir en HYROX. Equipamiento Concept2, trineos, wall balls y más.</p>
+                </div>
+                <div class="pillar">
+                    <h3>03</h3>
+                    <h4>Comunidad Real</h4>
+                    <p>No es un gym donde entrás solo y salís solo. En BRUTA vas a entrenar rodeado de gente que se exige tanto como vos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hyrox-explainer">
+        <div class="container hyrox-grid">
+            <div class="hyrox-left">
+                <h2>¿Qué es HYROX?</h2>
+                <p>HYROX es la competencia de fitness funcional que está tomando el mundo. Combina 8km de running con 8 estaciones de trabajo funcional. Se entrena, se compite y se mejora — sin importar tu edad ni nivel de partida.</p>
+                <p>Buenos Aires tiene su primer evento oficial en junio 2026. BRUTA es donde vas a prepararte.</p>
+            </div>
+            <div class="hyrox-stats">
+                <div class="stat-card">
+                    <div class="stat-num">100K+</div>
+                    <div class="stat-lbl">Atletas en el mundo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">60+</div>
+                    <div class="stat-lbl">Países con eventos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">8</div>
+                    <div class="stat-lbl">Estaciones de trabajo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">1°</div>
+                    <div class="stat-lbl">Evento BsAs — 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <div class="section-tag">Precios Fundadores</div>
+                <h2>Elegí tu acceso</h2>
+                <p style="color: var(--color-gray-text);">Solo para los primeros 100 ingresantes</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">3 Veces/Sem</div>
+                        <div class="plan-price">$60.000</div>
+                        <div class="plan-period">Por mes • Precio Fundador</div>
+                        <ul class="plan-features">
+                            <li>3 clases semanales</li>
+                            <li>Acceso a simulacros HYROX</li>
+                            <li>App de gestión de turnos</li>
+                            <li>Precio congelado 6 meses</li>
+                        </ul>
+                    </div>
+                    <button class="btn-price">Quiero este plan</button>
+                </div>
+                <div class="price-card featured">
+                    <div class="featured-badge">Más Elegido</div>
+                    <div>
+                        <div class="plan-name">Pase Libre</div>
+                        <div class="plan-price">$90.000</div>
+                        <div class="plan-period">Por mes • Precio Fundador</div>
+                        <ul class="plan-features">
+                            <li>Clases ilimitadas</li>
+                            <li>Acceso a todos los horarios</li>
+                            <li>Simulacros HYROX incluidos</li>
+                            <li>Precio congelado 6 meses</li>
+                        </ul>
+                    </div>
+                    <button class="btn-price" style="color:white;">Quiero este plan</button>
+                </div>
+                <div class="price-card">
+                    <div>
+                        <div class="plan-name">Anual</div>
+                        <div class="plan-price">$900.000</div>
+                        <div class="plan-period">Pago único • Ahorrás 2 meses</div>
+                        <ul class="plan-features">
+                            <li>Todo el año de Pase Libre</li>
+                            <li>2 sesiones de PT incluidas</li>
+                            <li>Prioridad en eventos</li>
+                            <li>Máximo ahorro garantizado</li>
+                        </ul>
+                    </div>
+                    <button class="btn-price">Quiero este plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-section">
+        <div class="container loc-grid">
+            <div>
+                <h2 style="font-size:32px; font-weight:900; text-transform:uppercase; margin-bottom:16px;">En el corazón de Villa Urquiza</h2>
+                <p style="color: var(--color-gray-text); font-size:15px; margin-bottom:24px;">Estamos en el corredor norte de CABA — Villa Urquiza, Coghlan y zona. A metros de la estación, del subte B y de las avenidas Triunvirato y Olazábal.<br><br>La dirección exacta la recibís vos primero, antes de la apertura oficial.</p>
+                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                    <span style="background:#1A1C1A; padding:6px 12px; font-size:11px; font-weight:700; border-radius:4px;">VILLA URQUIZA</span>
+                    <span style="background:#1A1C1A; padding:6px 12px; font-size:11px; font-weight:700; border-radius:4px;">COGHLAN</span>
+                    <span style="background:#1A1C1A; padding:6px 12px; font-size:11px; font-weight:700; border-radius:4px;">SUBTE B</span>
+                    <span style="background:#1A1C1A; padding:6px 12px; font-size:11px; font-weight:700; border-radius:4px;">TREN MITRE</span>
+                </div>
+            </div>
+            <div class="loc-map-placeholder">
+                <div style="text-align:center;">
+                    <div style="width:12px; height:12px; background:red; border-radius:50%; margin:0 auto 12px auto; box-shadow:0 0 10px red;"></div>
+                    BRUTA TRAINING<br><span style="font-size:11px; color:var(--color-gray-text);">PRÓXIMAMENTE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bottom-cta">
+        <div class="container">
+            <h2>¿Te quedás afuera?</h2>
+            <p>Los 100 cupos fundadores tienen precio especial y condiciones que no se van a repetir. Dejá tu mail y te contactamos antes que nadie.</p>
+            <div class="inline-form">
+                <input type="email" placeholder="Tu email" required>
+                <button type="submit">Entrar →</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-wrapper">
+            <div>© 2026 BRUTA Training • Villa Urquiza, CABA.</div>
+            <div class="footer-links">
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
