@@ -18,9 +18,11 @@
             --color-military-dark: #232A1F;
             --color-military-green: #3B4735;
             --color-military-light: #617557;
-            --color-bright-green: #8CE65C; /* Nuevo verde brillante de alto impacto */
             --color-white: #FFFFFF;
-            --color-gray-text: #A6AFA6; /* Texto un 15% más claro para mejorar legibilidad */
+            --color-gray-text: #A6AFA6;
+            /* Efecto LED basado en el verde militar claro */
+            --led-glow: 0 0 12px rgba(97, 117, 87, 0.6), 0 0 4px rgba(97, 117, 87, 0.4);
+            --led-glow-text: 0 0 8px rgba(97, 117, 87, 0.7);
         }
 
         body {
@@ -55,16 +57,17 @@
             font-weight: 900;
             letter-spacing: -1.5px;
         }
+        /* Punto del logo en verde militar para mayor seriedad */
         .logo span {
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
         }
 
         .btn-nav {
             background-color: transparent;
             color: var(--color-white);
-            border: 2px solid var(--color-military-light);
+            border: 2px solid var(--color-military-green);
             padding: 12px 24px;
-            font-size: 15px; /* +15% */
+            font-size: 15px;
             font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
@@ -73,9 +76,9 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .btn-nav:hover {
-            background-color: var(--color-military-green);
-            border-color: var(--color-bright-green);
-            box-shadow: 0 0 15px rgba(140, 230, 92, 0.3);
+            background-color: var(--color-military-dark);
+            border-color: var(--color-military-light);
+            box-shadow: var(--led-glow);
             transform: translateY(-2px);
         }
 
@@ -103,10 +106,11 @@
         }
 
         .location-tag {
-            font-size: 13px; /* +15% */
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 2px;
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
+            text-shadow: var(--led-glow-text); /* Texto LED */
             text-transform: uppercase;
             margin-bottom: 24px;
         }
@@ -114,10 +118,11 @@
         .location-tag span {
             color: var(--color-gray-text);
             margin-right: 12px;
+            text-shadow: none;
         }
 
         .hero h1 {
-            font-size: 64px; /* Mantiene tamaño original */
+            font-size: 64px;
             font-weight: 900;
             line-height: 0.95;
             letter-spacing: -2px;
@@ -125,12 +130,14 @@
             margin-bottom: 32px;
         }
 
+        /* Palabra resaltada con efecto LED en las letras */
         .hero h1 span {
-            color: var(--color-bright-green);
+            color: var(--color-white);
+            text-shadow: var(--led-glow-text);
         }
 
         .hero h2 {
-            font-size: 21px; /* +15% */
+            font-size: 21px;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--color-white);
@@ -139,7 +146,7 @@
         }
 
         .hero p {
-            font-size: 17px; /* +15% */
+            font-size: 17px;
             color: var(--color-gray-text);
             max-width: 520px;
         }
@@ -153,8 +160,8 @@
             transition: all 0.4s ease;
         }
         .hero-right:hover {
-            border-color: var(--color-military-green);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-color: var(--color-military-light);
+            box-shadow: var(--led-glow), 0 10px 30px rgba(0,0,0,0.5); /* Caja LED */
         }
 
         .counter-box {
@@ -167,13 +174,13 @@
         .counter-num {
             font-size: 64px;
             font-weight: 900;
-            color: var(--color-bright-green);
+            color: var(--color-white);
+            text-shadow: var(--led-glow-text); /* Número LED */
             line-height: 1;
-            text-shadow: 0 0 20px rgba(140, 230, 92, 0.2);
         }
 
         .counter-label {
-            font-size: 14px; /* +15% */
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -181,12 +188,12 @@
         }
 
         .counter-sub {
-            font-size: 13px; /* +15% */
+            font-size: 13px;
             color: var(--color-gray-text);
         }
 
         .form-title {
-            font-size: 23px; /* +15% */
+            font-size: 23px;
             font-weight: 800;
             text-transform: uppercase;
             text-align: center;
@@ -205,14 +212,14 @@
             padding: 16px;
             border-radius: 4px;
             color: var(--color-white);
-            font-size: 16px; /* +15% */
+            font-size: 16px;
             transition: all 0.3s ease;
         }
 
         .form-group input:focus {
             outline: none;
-            border-color: var(--color-bright-green);
-            box-shadow: 0 0 10px rgba(140, 230, 92, 0.2);
+            border-color: var(--color-military-light);
+            box-shadow: var(--led-glow);
         }
 
         .btn-hero-form {
@@ -221,7 +228,7 @@
             color: var(--color-white);
             border: 2px solid var(--color-military-light);
             padding: 18px;
-            font-size: 16px; /* +15% */
+            font-size: 16px;
             font-weight: 700;
             text-transform: uppercase;
             border-radius: 4px;
@@ -232,15 +239,14 @@
         }
 
         .btn-hero-form:hover {
-            background-color: var(--color-bright-green);
-            color: var(--color-black);
+            background-color: var(--color-military-light);
             border-color: var(--color-white);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(140, 230, 92, 0.4);
+            box-shadow: var(--led-glow), 0 8px 20px rgba(0,0,0,0.3);
         }
 
         .form-disclaimer {
-            font-size: 13px; /* +15% */
+            font-size: 13px;
             color: var(--color-gray-text);
             text-align: center;
             margin-top: 20px;
@@ -253,10 +259,11 @@
         }
 
         .section-tag {
-            font-size: 14px; /* +15% */
+            font-size: 14px;
             font-weight: 700;
             text-transform: uppercase;
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
+            text-shadow: var(--led-glow-text);
             letter-spacing: 1px;
             margin-bottom: 12px;
         }
@@ -290,6 +297,7 @@
         }
         .pillar:hover {
             border-color: var(--color-military-light);
+            box-shadow: var(--led-glow); /* Tarjeta pilar LED */
             transform: translateY(-5px);
         }
 
@@ -299,21 +307,22 @@
             color: #222623;
             line-height: 1;
             margin-bottom: 16px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .pillar:hover h3 {
             color: var(--color-military-light);
+            text-shadow: var(--led-glow-text);
         }
 
         .pillar h4 {
-            font-size: 21px; /* +15% */
+            font-size: 21px;
             font-weight: 800;
             text-transform: uppercase;
             margin-bottom: 12px;
         }
 
         .pillar p {
-            font-size: 16px; /* +15% */
+            font-size: 16px;
             color: var(--color-gray-text);
         }
 
@@ -344,7 +353,7 @@
         }
 
         .hyrox-left p {
-            font-size: 17px; /* +15% */
+            font-size: 17px;
             color: var(--color-gray-text);
             margin-bottom: 20px;
         }
@@ -356,7 +365,7 @@
         }
 
         .stat-card {
-            border-left: 3px solid var(--color-bright-green);
+            border-left: 3px solid var(--color-military-light);
             padding-left: 20px;
         }
 
@@ -367,7 +376,7 @@
         }
 
         .stat-lbl {
-            font-size: 13px; /* +15% */
+            font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--color-gray-text);
@@ -385,7 +394,7 @@
             margin-bottom: 64px;
         }
         .pricing-header p {
-            font-size: 17px; /* +15% */
+            font-size: 17px;
         }
 
         .pricing-grid {
@@ -413,11 +422,11 @@
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* EFECTO DE CAJA PROFESIONAL (Hover Dinámico) */
+        /* EFECTO HOVER LED EN CAJONES DE OPCIONES */
         .price-card:hover {
             border-color: var(--color-military-light);
+            box-shadow: var(--led-glow), 0 15px 40px rgba(0, 0, 0, 0.6);
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
 
         .price-card.featured {
@@ -425,8 +434,8 @@
             background-color: #101411;
         }
         .price-card.featured:hover {
-            border-color: var(--color-bright-green);
-            box-shadow: 0 20px 40px rgba(140, 230, 92, 0.15);
+            border-color: var(--color-military-light);
+            box-shadow: var(--led-glow), 0 20px 40px rgba(97, 117, 87, 0.2);
         }
 
         .featured-badge {
@@ -434,19 +443,20 @@
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--color-bright-green);
-            border: 2px solid var(--color-white);
-            color: var(--color-black);
-            font-size: 12px; /* +15% */
+            background-color: var(--color-military-green);
+            border: 2px solid var(--color-military-light);
+            color: var(--color-white);
+            font-size: 12px;
             font-weight: 900;
             padding: 6px 16px;
             text-transform: uppercase;
             border-radius: 20px;
             letter-spacing: 0.5px;
+            box-shadow: var(--led-glow);
         }
 
         .plan-name {
-            font-size: 16px; /* +15% */
+            font-size: 16px;
             font-weight: 700;
             text-transform: uppercase;
             color: var(--color-gray-text);
@@ -461,9 +471,9 @@
         }
 
         .plan-period {
-            font-size: 13px; /* +15% */
+            font-size: 13px;
             text-transform: uppercase;
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
             font-weight: 700;
             margin-bottom: 32px;
         }
@@ -474,7 +484,7 @@
         }
 
         .plan-features li {
-            font-size: 15px; /* +15% */
+            font-size: 15px;
             color: #D0D4D0;
             margin-bottom: 14px;
             display: flex;
@@ -483,7 +493,8 @@
 
         .plan-features li::before {
             content: "✓";
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
+            text-shadow: var(--led-glow-text);
             font-weight: bold;
             margin-right: 10px;
         }
@@ -495,7 +506,7 @@
             color: #FFF;
             padding: 15px;
             text-transform: uppercase;
-            font-size: 14px; /* +15% */
+            font-size: 14px;
             font-weight: 700;
             border-radius: 4px;
             cursor: pointer;
@@ -512,10 +523,10 @@
             color: #FFF;
         }
         .price-card.featured:hover .btn-price {
-            background-color: var(--color-bright-green);
+            background-color: var(--color-military-light);
             border-color: var(--color-white);
-            color: var(--color-black);
-            box-shadow: 0 5px 15px rgba(140, 230, 92, 0.3);
+            color: var(--color-white);
+            box-shadow: var(--led-glow);
         }
 
         /* Location Section */
@@ -544,21 +555,22 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         .loc-grid:hover .loc-map-placeholder {
-            border-color: var(--color-military-green);
+            border-color: var(--color-military-light);
+            box-shadow: var(--led-glow);
         }
 
         /* Footer */
         footer {
             padding: 50px 0;
             border-top: 1px solid #1A1C1A;
-            font-size: 14px; /* +15% */
+            font-size: 14px;
             color: #666;
         }
 
@@ -575,7 +587,8 @@
             transition: color 0.3s ease;
         }
         .footer-links a:hover {
-            color: var(--color-bright-green);
+            color: var(--color-military-light);
+            text-shadow: var(--led-glow-text);
         }
     </style>
 </head>
@@ -605,7 +618,7 @@
                 </div>
                 <div class="form-title">Reservá tu lugar</div>
                 
-                <!-- IMPORTANTE: CAMBIÁ EL CORREO ELECTRÓNICO DE ABAJO POR EL TUYO -->
+                <!-- IMPORTANTE: REEMPLAZÁ CON TU CORREO -->
                 <form action="https://formsubmit.co/martinasolivero@gmail.com" method="POST">
                     <input type="hidden" name="_next" value="https://martinasolivero-code.github.io/BRUTA/gracias.html">
                     <input type="hidden" name="_captcha" value="false">
@@ -748,7 +761,7 @@
             </div>
             <div class="loc-map-placeholder">
                 <div style="text-align:center;">
-                    <div style="width:14px; height:14px; background:var(--color-bright-green); border-radius:50%; margin:0 auto 14px auto; box-shadow:0 0 15px var(--color-bright-green);"></div>
+                    <div style="width:14px; height:14px; background:var(--color-military-light); border-radius:50%; margin:0 auto 14px auto; box-shadow: var(--led-glow);"></div>
                     BRUTA. TRAINING<br><span style="font-size:13px; color:var(--color-gray-text); font-weight: 500;">PRÓXIMAMENTE</span>
                 </div>
             </div>
