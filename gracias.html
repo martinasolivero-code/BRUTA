@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Cupo Reservado! - BRUTA</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        :root {
+            --color-black: #0D0E0E;
+            --color-zinc-dark: #141616;
+            --color-military-green: #3B4735;
+            --color-military-light: #617557;
+            --color-white: #FFFFFF;
+            --color-gray-text: #9A9E9A;
+        }
+        body {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 24px;
+        }
+        .success-card {
+            background-color: var(--color-zinc-dark);
+            border: 1px solid #1A1C1A;
+            border-radius: 8px;
+            padding: 50px 40px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .icon {
+            font-size: 56px;
+            color: var(--color-military-light);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        h1 {
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+        p {
+            font-size: 15px;
+            color: var(--color-gray-text);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #232A1F;
+            border: 1px solid var(--color-military-green);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-white);
+            text-decoration: none;
+        }
+        .badge:hover {
+            background-color: var(--color-military-green);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-card">
+        <div class="icon">✓</div>
+        <h1>¡Registro Confirmado!</h1>
+        <p>Aseguraste tu prioridad en la lista de <strong>Socios Fundadores</strong> para el desembarco en Villa Urquiza.<br><br>Te vamos a contactar por WhatsApp antes de la apertura oficial para mantener tu precio promocional congelado.</p>
+        <a href="https://martinasolivero-code.github.io/BRUTA/" class="badge">Volver a la web</a>
+    </div>
+
+</body>
+</html>
