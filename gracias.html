@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Cupo Reservado! - BRUTA</title>
+    <title>¡Cupo Reservado! - BRUTA.</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,9 +15,9 @@
             --color-black: #0D0E0E;
             --color-zinc-dark: #141616;
             --color-military-green: #3B4735;
-            --color-military-light: #617557;
+            --color-bright-green: #8CE65C;
             --color-white: #FFFFFF;
-            --color-gray-text: #9A9E9A;
+            --color-gray-text: #A6AFA6;
         }
         body {
             background-color: var(--color-black);
@@ -30,47 +30,57 @@
         }
         .success-card {
             background-color: var(--color-zinc-dark);
-            border: 1px solid #1A1C1A;
+            border: 2px solid var(--color-military-green);
             border-radius: 8px;
-            padding: 50px 40px;
-            max-width: 500px;
+            padding: 55px 45px;
+            max-width: 520px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            transition: border-color 0.3s ease;
+        }
+        .success-card:hover {
+            border-color: var(--color-bright-green);
         }
         .icon {
-            font-size: 56px;
-            color: var(--color-military-light);
+            font-size: 64px;
+            color: var(--color-bright-green);
             margin-bottom: 20px;
             line-height: 1;
+            text-shadow: 0 0 20px rgba(140, 230, 92, 0.3);
         }
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 900;
             text-transform: uppercase;
             margin-bottom: 16px;
             letter-spacing: -0.5px;
         }
         p {
-            font-size: 15px;
+            font-size: 17px; /* +15% */
             color: var(--color-gray-text);
             line-height: 1.6;
-            margin-bottom: 32px;
+            margin-bottom: 36px;
         }
         .badge {
             display: inline-block;
             background-color: #232A1F;
-            border: 1px solid var(--color-military-green);
-            padding: 10px 20px;
+            border: 2px solid var(--color-bright-green);
+            padding: 14px 28px;
             border-radius: 4px;
-            font-size: 12px;
+            font-size: 14px; /* +15% */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--color-white);
             text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .badge:hover {
-            background-color: var(--color-military-green);
+            background-color: var(--color-bright-green);
+            color: var(--color-black);
+            border-color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(140, 230, 92, 0.3);
         }
     </style>
 </head>
