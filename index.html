@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Importar Archivo Black desde Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <title>BRUTA. - El Gym Que Falta | Saavedra</title>
     <style>
         * {
@@ -51,11 +55,43 @@
             height: 90px;
         }
 
+                /* Ajuste de tipografía general para el logo */
         .logo {
-            font-size: 34px;
-            font-weight: 900;
-            letter-spacing: -1.5px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 32px;
+            font-weight: normal; /* Archivo Black ya es gruesa por defecto */
+            letter-spacing: -1px;
+            display: inline-flex;
+            align-items: baseline;
+            position: relative;
         }
+
+        /* Detalle de la línea superior sobre las últimas letras (TA) */
+        .logo .linea-top {
+            position: relative;
+            display: inline-block;
+        }
+        .logo .linea-top::before {
+            content: "";
+            position: absolute;
+            top: -2px; /* Controla la distancia de la línea sobre las letras */
+            left: 0;
+            width: 100%;
+            height: 2px; /* Grosor de la línea */
+            background-color: var(--color-military-light);
+        }
+
+        /* El punto cuadrado del final */
+        .logo .punto-cuadrado {
+            display: inline-block;
+            width: 10px; /* Ancho del cuadrado */
+            height: 10px; /* Alto del cuadrado */
+            background-color: var(--color-military-light);
+            margin-left: 4px; /* Separación de la palabra */
+            align-self: center; /* Lo alinea verticalmente respecto a la base */
+            transform: translateY(6px); /* Ajuste fino de altura para que quede al ras */
+        }
+
         .logo span {
             color: var(--color-military-light);
         }
