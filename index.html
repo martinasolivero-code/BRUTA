@@ -20,7 +20,6 @@
             --color-military-light: #617557;
             --color-white: #FFFFFF;
             --color-gray-text: #A6AFA6;
-            /* Efecto LED basado en el verde militar claro */
             --led-glow: 0 0 12px rgba(97, 117, 87, 0.6), 0 0 4px rgba(97, 117, 87, 0.4);
             --led-glow-text: 0 0 8px rgba(97, 117, 87, 0.7);
         }
@@ -57,7 +56,6 @@
             font-weight: 900;
             letter-spacing: -1.5px;
         }
-        /* Punto del logo en verde militar para mayor seriedad */
         .logo span {
             color: var(--color-military-light);
         }
@@ -110,7 +108,7 @@
             font-weight: 700;
             letter-spacing: 2px;
             color: var(--color-military-light);
-            text-shadow: var(--led-glow-text); /* Texto LED */
+            text-shadow: var(--led-glow-text);
             text-transform: uppercase;
             margin-bottom: 24px;
         }
@@ -130,7 +128,6 @@
             margin-bottom: 32px;
         }
 
-        /* Palabra resaltada con efecto LED en las letras */
         .hero h1 span {
             color: var(--color-military-light);
             text-shadow: var(--led-glow-text);
@@ -161,7 +158,7 @@
         }
         .hero-right:hover {
             border-color: var(--color-military-light);
-            box-shadow: var(--led-glow), 0 10px 30px rgba(0,0,0,0.5); /* Caja LED */
+            box-shadow: var(--led-glow), 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .counter-box {
@@ -175,7 +172,7 @@
             font-size: 64px;
             font-weight: 900;
             color: var(--color-white);
-            text-shadow: var(--led-glow-text); /* Número LED */
+            text-shadow: var(--led-glow-text);
             line-height: 1;
         }
 
@@ -297,7 +294,7 @@
         }
         .pillar:hover {
             border-color: var(--color-military-light);
-            box-shadow: var(--led-glow); /* Tarjeta pilar LED */
+            box-shadow: var(--led-glow);
             transform: translateY(-5px);
         }
 
@@ -422,7 +419,6 @@
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        /* EFECTO HOVER LED EN CAJONES DE OPCIONES */
         .price-card:hover {
             border-color: var(--color-military-light);
             box-shadow: var(--led-glow), 0 15px 40px rgba(0, 0, 0, 0.6);
@@ -618,7 +614,6 @@
                 </div>
                 <div class="form-title">Reservá tu lugar</div>
                 
-                <!-- IMPORTANTE: REEMPLAZÁ CON TU CORREO -->
                 <form action="https://formsubmit.co/bruta.thefitcompany@gmail.com" method="POST">
                     <input type="hidden" name="_next" value="https://martinasolivero-code.github.io/BRUTA/gracias.html">
                     <input type="hidden" name="_captcha" value="false">
@@ -653,7 +648,7 @@
                 <div class="pillar">
                     <h3>02</h3>
                     <h4>Hyrox Oficial</h4>
-                    <p>Único espacio del corredor norte preparado para entrenar y competir en HYROX. Equipamiento Concept2, trineos, wall balls y más.</p>
+                    <p>Único espacio del corredor norte preparado para entrenar y competir en HYROX. Equipamiento profesional, trineos, wall balls y más.</p>
                 </div>
                 <div class="pillar">
                     <h3>03</h3>
@@ -669,7 +664,7 @@
             <div class="hyrox-left">
                 <h2>¿Qué es HYROX?</h2>
                 <p>HYROX es la competencia de fitness funcional que está tomando el mundo. Combina 8km de running con 8 estaciones de trabajo funcional. Se entrena, se compite y se mejora — sin importar tu edad ni nivel de partida.</p>
-                <p>Buenos Aires tiene su primer evento oficial en junio 2026. BRUTA. es donde vas a prepararte.</p>
+                <p>Buenos Aires tiene su primer evento oficial en junio 2026. BRUTA. te prepara para el próximo evento.</p>
             </div>
             <div class="hyrox-stats">
                 <div class="stat-card">
@@ -736,7 +731,7 @@
                         <div class="plan-period">Pago único • Ahorrás 2 meses</div>
                         <ul class="plan-features">
                             <li>Todo el año de Pase Libre</li>
-                            <li>2 sesiones de PT incluidas</li>
+                            <li>2 sesiones de entrenamiento personalizado incluidas</li>
                             <li>Prioridad en eventos</li>
                             <li>Máximo ahorro garantizado</li>
                         </ul>
@@ -751,10 +746,10 @@
         <div class="container loc-grid">
             <div>
                 <h2 style="font-size:36px; font-weight:900; text-transform:uppercase; margin-bottom:16px; letter-spacing:-0.5px;">En el corazón de Saavedra</h2>
-                <p style="color: var(--color-gray-text); font-size:17px; margin-bottom:24px;">Estamos estratégicamente ubicados en el corredor norte de CABA, en el barrio de Saavedra — a metros de la Avenida Ricardo Balbín y Tronador. Una zona de excelente acceso, conectividad y cercanía clave para entrenar de forma eficiente.<br><br>La dirección exacta la recibís vos primero, antes de la apertura oficial.</p>
+                <p style="color: var(--color-gray-text); font-size:17px; margin-bottom:24px;">Estamos estratégicamente ubicados en el corredor norte de CABA, en el barrio de Saavedra — a metros de la estación Saavedra del Tren Mitre. Una zona de excelente acceso, conectividad y cercanía clave para entrenar de forma eficiente.<br><br>La dirección exacta la recibís vos primero, antes de la apertura oficial.</p>
                 <div style="display:flex; gap:10px; flex-wrap:wrap;">
                     <span style="background:#1A1C1A; padding:8px 16px; font-size:13px; font-weight:700; border-radius:4px; border: 1px solid #222;">SAAVEDRA</span>
-                    <span style="background:#1A1C1A; padding:8px 16px; font-size:13px; font-weight:700; border-radius:4px; border: 1px solid #222;">AV. BALBÍN</span>
+                    <span style="background:#1A1C1A; padding:8px 16px; font-size:13px; font-weight:700; border-radius:4px; border: 1px solid #222;">TREN MITRE</span>
                     <span style="background:#1A1C1A; padding:8px 16px; font-size:13px; font-weight:700; border-radius:4px; border: 1px solid #222;">NÚÑEZ</span>
                     <span style="background:#1A1C1A; padding:8px 16px; font-size:13px; font-weight:700; border-radius:4px; border: 1px solid #222;">PARQUE SAAVEDRA</span>
                 </div>
